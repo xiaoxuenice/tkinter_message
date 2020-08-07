@@ -21,8 +21,8 @@ class MY_GUI(threading.Thread):
         self.xiaoxue.title("welcome to use!!     {}    you now chat and   {}".format(self.IP.upper(),self.lt.upper()))
         screenWidth = self.xiaoxue.winfo_screenwidth()  # 宽
         screenHeight = self.xiaoxue.winfo_screenheight()  # 高
-        x = int((screenWidth - 700) / 2)
-        y = int((screenHeight - 500) / 2)
+        x = int((screenWidth - 750) / 2)
+        y = int((screenHeight - 550) / 2)
         self.xiaoxue.geometry("700x500+{}+{}".format(x, y))  # 宽高居中
         # self.xiaoxue.geometry("700x500+10+10")
         self.xiaoxue['bg'] = '#ADD8E6'  # bg背景颜色 fg字体颜色
@@ -31,7 +31,7 @@ class MY_GUI(threading.Thread):
         self.xiaoxue.bind("<Control-Key-d>", self.BTN3)
 
         self.entry33 = Entry(self.xiaoxue, width=63, )
-        self.entry33.grid(row=2, column=0, columnspan=5, )
+        self.entry33.grid(row=3, column=0, columnspan=3,sticky='e' )
         self.entry33.bind("<Return>",self.SHELL)
         self.button1 = Button(self.xiaoxue, bg="pink", text="Start", activebackground='lime', command=lambda: self.thread_it(self.read),
                               width=10)  # activebackground按下去颜色
@@ -47,7 +47,7 @@ class MY_GUI(threading.Thread):
         self.button4.grid(row=1, column=1, sticky='w')  # 调度BTN4函数
         self.button7 = Button(self.xiaoxue, bg="pink", text="CLEAR", activebackground='lime', command=self.CLEAR,
                               width=10)
-        self.button7.grid(row=2, column=0, sticky='w')  # 调度BTN6函数
+        self.button7.grid(row=3, column=4, sticky='e')  # 调度BTN6函数
 
         # 文本框
         self.scroll2 = Scrollbar()  # 滚动条
@@ -57,8 +57,8 @@ class MY_GUI(threading.Thread):
         self.text1.tag_config("tag", background='yellow', foreground='red')
         self.scroll2.config(command=self.text1.yview)
         self.text1.config(yscrollcommand=self.scroll2.set)
-        self.text1.grid(row=3, column=0, columnspan=5)
-        self.scroll2.grid(row=3, column=6, columnspan=1, sticky='nsw')
+        self.text1.grid(row=2, column=0, columnspan=5)
+        self.scroll2.grid(row=2, column=6, columnspan=1, sticky='nsw')
         self.text1.see(END)
         self.text1.update()
         # 输出框
@@ -141,8 +141,8 @@ class MY_GUI(threading.Thread):
         self.xiaoxue.title("登陆认证")
         screenWidth = self.xiaoxue.winfo_screenwidth()  # 宽
         screenHeight = self.xiaoxue.winfo_screenheight()  # 高
-        x = int((screenWidth - 700) / 2)
-        y = int((screenHeight - 500) / 2)
+        x = int((screenWidth - 300) / 2)
+        y = int((screenHeight - 200) / 2)
         self.xiaoxue.geometry("300x200+{}+{}".format(x, y))  # 宽高居中
         # self.xiaoxue.geometry("700x500+10+10")
         self.xiaoxue['bg'] = '#ADD8E6'  # bg背景颜色 fg字体颜色
