@@ -93,7 +93,7 @@ def crebr(brr):
   mydb = pymysql.connect(host="192.168.116.200",user="root",passwd="Pwd@123456",database="python",ssl={"ssl":""})
   a = mydb.cursor()
   try:
-    a.execute('create table {}(ip varchar(200),time varchar(200) ,message varchar(200)) DEFAULT CHARSET=utf8;'.format(brr))
+    a.execute('create table {}(ip varchar(200),time varchar(200) ,message varchar(20000)) DEFAULT CHARSET=utf8;'.format(brr))
     mydb.commit()
     return "ok"
   except Exception as f:
