@@ -1,3 +1,4 @@
+#!/bin/sh
 # tkinter_message
 python开发的聊天软件
 有个a.ico是图标。别忘记下载哦~。
